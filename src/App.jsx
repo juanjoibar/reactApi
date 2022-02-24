@@ -1,21 +1,15 @@
-import  { useState } from 'react'
-import Formulario from './Components/Formulario'
-import PintarPersonajes from './Components/PintarPersonajes'
-
+import { Outlet } from 'react-router-dom';
+import NavBar from './Components/NavBar'
 
 const App = () => {
+    return (
+        <div>
+            <NavBar/>
+            <div className="container">
+                <Outlet/>          
+                  </div>
+        </div>
+    );
+};
 
-  const [nombrePersonaje , setNombrePersonaje] = useState ("");
-
-
-  return (
-    <div>
-        <h1>App Rick and Morty</h1>
-        <Formulario setNombrePersonaje={setNombrePersonaje}/>
-        <PintarPersonajes nombrePersonaje = {nombrePersonaje}/>
-    </div>
-
-  )
-}
-
-export default App
+export default App;
